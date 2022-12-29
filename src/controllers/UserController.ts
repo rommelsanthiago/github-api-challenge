@@ -15,4 +15,18 @@ export class UserController {
             res.send({ message: error.message }).status(error.status);
         };
     };
+
+    getUserDetail = async (req: Request, res: Response) => {
+        try {
+            const { username } = req.params;
+
+            // console.log(username)
+
+            const result = await this.userBusiness.getUserDetail(username);
+
+            res.status(200).send(result);
+        } catch (error: any) {
+            res.send({ message: error.message }).status(error.status);
+        };
+    };
 };

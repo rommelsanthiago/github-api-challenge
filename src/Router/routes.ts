@@ -9,3 +9,4 @@ const userBusiness = new UserBusiness();
 const userController = new UserController(userBusiness);
 
 router.get('/users', userController.getUsersSince);
+router.get('/users/:username/details', userController.getUserDetail);

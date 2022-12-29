@@ -37,4 +37,23 @@ export class UserBusiness {
             throw new CustomError(error.code, error.message)
         };
     };
+
+    public getUserDetail = async (username: string) => {
+        try {
+            if (!username) {
+                throw new CustomError(
+                    400,
+                    'Required field'
+                );
+            };
+
+            const data = await api.get(`users/${username}`)
+
+            console.log(data.data)
+
+            return data;
+        } catch (error: any) {
+            throw new CustomError(error.code, error.message)
+        }
+    }
 };

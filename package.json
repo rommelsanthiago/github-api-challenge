@@ -2,9 +2,9 @@
   "name": "github-api-challenge",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "tsc && node ./build/app.js",
+    "start": "tsc && node --inspect ./build/app.js",
     "dev": "tsnd --transpile-only --ignore-watch node_modules ./src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
