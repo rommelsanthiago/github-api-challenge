@@ -49,9 +49,7 @@ export class UserBusiness {
 
             const data = await api.get(`users/${username}`)
 
-            console.log(data.data)
-
-            return data;
+            return data.data;
         } catch (error: any) {
             throw new CustomError(error.code, error.message)
         }
@@ -68,9 +66,7 @@ export class UserBusiness {
 
             const data = await api.get(`users/${username}/repos`)
 
-            console.log(data.data)
-
-            return data;
+            return data.data;
         } catch (error: any) {
             throw new CustomError(error.code, error.message)
         }
