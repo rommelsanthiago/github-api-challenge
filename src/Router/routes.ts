@@ -1,9 +1,11 @@
 import { Router } from "express";
+import { UserBusiness } from "../business/UserBusiness";
 
-import { UsersController } from "../controllers/usersController";
+import { UserController } from "../controllers/UserController";
 
 export const router = Router();
 
-const usersController = new UsersController()
+const userBusiness = new UserBusiness();
+const userController = new UserController(userBusiness);
 
-router.get('/', usersController.getHello);
+router.get('/users', userController.getUsersSince);
