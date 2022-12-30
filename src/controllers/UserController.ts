@@ -4,9 +4,19 @@ import { UserBusiness } from "../business/UserBusiness";
 export class UserController {
     constructor(private userBusiness: UserBusiness){}
 
+    getUsers = async (req: Request, res: Response) => {
+        try {
+            const result = await this.userBusiness.getUsers()
+
+            res.status(200).send(result);
+        } catch (error: any) {
+            res.send({ message: error.message }).status(error.status);
+        };
+    };
+
     getUsersSince = async (req: Request, res: Response) => {
         try {
-            const input = +req.body.input;
+            const input = Number(req.query.since);
             
             const result = await this.userBusiness.getUsersSince(input)
 
