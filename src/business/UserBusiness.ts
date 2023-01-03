@@ -34,7 +34,7 @@ export class UserBusiness {
                 );
             };
 
-            if (isNumberObject(since)) {
+            if (!isNaN(since)) {
                 throw new Error(
                   'Fill in the field with a number'
                 );
