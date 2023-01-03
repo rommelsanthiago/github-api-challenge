@@ -34,12 +34,6 @@ export class UserBusiness {
                 );
             };
 
-            if (!isNaN(since)) {
-                throw new Error(
-                  'Fill in the field with a number'
-                );
-            };
-
             const data = await api.get(`/users?since=${since}&per_page=20`);
 
             const users = data.data;
